@@ -2,11 +2,13 @@
     session_start();
     if(!isset($_SESSION['count'])){
         $_SESSION['count'] = 1;
-    }else{
+    }
+    else{
         $count = $_SESSION['count'];
         $_SESSION['count'] = $count + 1;
     }
-?>    
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,13 +17,13 @@
 </head>
 <body>
     <h1>Implementasi Session</h1>
-    <p>Anda telah mengunjungi halaman ini <?php echo $_SESSION ['count']?> kali.</p>
+    <p>Anda telah mengunjungi halaman ini <?php echo $_SESSION['count']?> kali.</p>
 
-    <!-- delete session --> 
-     <?php 
+    <!--delete session -->
+    <?php
         if(isset($_SESSION['count'])){
-            unset($_SESSION['count']);
+            unset ($_SESSION['count']);
         }
-    ?>    
+    ?>
 </body>
 </html>

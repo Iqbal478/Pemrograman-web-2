@@ -1,9 +1,9 @@
-<?php
-    $value = "Ini Coockie pertama";
-    if(isset($_COOKIE['first_cookie'])){
+<?php 
+    $value = "Ini Cookie Pertama";
+    if(!isset($_COOKIE['first_cookie'])){
         setcookie("first_cookie", $value, time() + 3600 * 24 * 30);
     }
-?>    
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,20 +12,17 @@
 </head>
 <body>
     <h1>Implementasi Cookie</h1>
-    <?php if(isset($_COOKIE['first_cookie'])):?> 
+    <?php if(isset($_COOKIE['first_cookie'])):?>
         <p><?php echo $_COOKIE['first_cookie'];?></p>
     <?php else:?>
-        <p>Cookie belum di-set</p> 
-        <p>Cookie udah masak</p> 
-    <?php endif;?>   
+        <p>Cookie belum di-set</p>
+    <?php endif;?>
 
-    <!-- menghapus cookie --> 
-     <?php 
+    <!--menghapus cookie -->
+    <?php
         if(isset($_COOKIE['first_cookie'])){
             setcookie('first_cookie');
         }
-
-    ?>    
-    
+    ?>
 </body>
 </html>
